@@ -19,7 +19,7 @@ app.use(express.json());
 // app.use(morgan('combined'));
 
 // Template engine
-app.engine('handlebars', engine());
+app.engine('handlebars', engine({ defaultLayout: 'main' }));
 
 app.engine('.hbs', engine({ extname: '.hbs' }));
 app.set('view engine', 'hbs');
@@ -39,7 +39,11 @@ app.get('/search', (req, res) => {
 });
 
 app.get('/login', (req, res) => {
-  res.render('pages/login');
+  res.render('pages/login', { layout: 'account', pageTitle: 'Login to AnhCBT' });
+});
+
+app.get('/register', (req, res) => {
+  res.render('pages/register', { layout: 'account', pageTitle: 'Register to AnhCBT' });
 });
 
 app.post('/login', (req, res) => {
