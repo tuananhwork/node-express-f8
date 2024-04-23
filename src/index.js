@@ -6,6 +6,8 @@ const path = require('path');
 const app = express();
 const port = 3000;
 
+const route = require('./routes');
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(
@@ -25,31 +27,7 @@ app.engine('.hbs', engine({ extname: '.hbs' }));
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'resources/views'));
 
-app.get('/', (req, res) => {
-  res.render('pages/home');
-});
-
-app.get('/news', (req, res) => {
-  res.render('pages/news');
-});
-
-app.get('/search', (req, res) => {
-  console.log('\n\n', req.query);
-  res.render('pages/search');
-});
-
-app.get('/login', (req, res) => {
-  res.render('pages/login', { layout: 'account', pageTitle: 'Login to AnhCBT' });
-});
-
-app.get('/register', (req, res) => {
-  res.render('pages/register', { layout: 'account', pageTitle: 'Register to AnhCBT' });
-});
-
-app.post('/login', (req, res) => {
-  console.log(req.body);
-  res.send('');
-});
+route(app);
 
 app.listen(port, () => {
   console.log(`Blog app listening on http://anhcbt.com:${port}`);
