@@ -30,5 +30,5 @@ app.set('views', path.join(__dirname, 'resources/views'));
 route(app);
 
 app.listen(port, () => {
-  console.log(`Blog app listening on http://anhcbt.com:${port}`);
+  console.log(`Blog app listening on http://127.0.0.1:${port}`);
 });
