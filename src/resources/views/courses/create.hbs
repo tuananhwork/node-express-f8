@@ -1,0 +1,28 @@
+<form class='my-5' method='POST' action='/courses/store'>
+  <h3 class='text-center'>Create a new Course</h3>
+  <div class='mb-3'>
+    <label for='course-name' class='form-label'>Name</label>
+    <input type='text' class='form-control' id='course-name' placeholder='Name of course' name='name' />
+  </div>
+  <div class='mb-3'>
+    <label for='course-price' class='form-label'>Price</label>
+    <input type='number' class='form-control' id='course-price' placeholder='Price of course ($)' name='price' />
+  </div>
+  <div class='mb-3'>
+    <label for='course-url' class='form-label'>Embeded ID (Youtube)</label>
+    <input type='text' class='form-control' id='course-url' placeholder='ID' name='videoID' />
+  </div>
+  <div class='mb-3'>
+    <label for='' class='form-label'>Level</label>
+    <select class='form-select' aria-label='Level' name='level'>
+      <option value='Ease'>Ease</option>
+      <option value='Medium'>Medium</option>
+      <option value='Hard'>Hard</option>
+    </select>
+  </div>
+  <div class='mb-3'>
+    <label for='course-desc' class='form-label'>Description</label>
+    <textarea class='form-control' id='course-desc' rows='3' name='description'></textarea>
+  </div>
+  <button class='btn btn-primary' type='submit'>Add Course</button>
+</form>

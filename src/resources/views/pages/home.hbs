@@ -4,11 +4,19 @@
       {{#each courses as |course|}}
         <div class='col mb-4'>
           <div class='card' style='width: 18rem;'>
-            <img src='{{course.image}}' class='card-img-top' alt='{{course.name}}' />
+            <a href='/courses/{{course.slug}}'>
+              <img
+                src='http://img.youtube.com/vi/{{course.videoID}}/hqdefault.jpg'
+                class='card-img-top'
+                alt='{{course.name}}'
+              />
+            </a>
             <div class='card-body'>
-              <h5 class='card-title'>{{course.name}}</h5>
-              <p class='card-text'>{{course.desc}}</p>
-              <a href='#' class='btn btn-primary'>Detail</a>
+              <a class='link-underline link-underline-opacity-0' href='/courses/{{course.slug}}'>
+                <h5 class='card-title'>{{course.name}}</h5>
+              </a>
+              <p class='card-text'>{{course.description}}</p>
+              <a href='/courses/{{course.slug}}' class='btn btn-primary'>Detail</a>
             </div>
           </div>
         </div>
