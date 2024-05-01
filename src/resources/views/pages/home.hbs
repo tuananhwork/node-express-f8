@@ -1,1 +1,18 @@
-<h1 class=''>HomePage</h1>
+<div class='courses-container'>
+  <div class='container my-5'>
+    <div class='row'>
+      {{#each courses as |course|}}
+        <div class='col mb-4'>
+          <div class='card' style='width: 18rem;'>
+            <img src='{{course.image}}' class='card-img-top' alt='{{course.name}}' />
+            <div class='card-body'>
+              <h5 class='card-title'>{{course.name}}</h5>
+              <p class='card-text'>{{course.desc}}</p>
+              <a href='#' class='btn btn-primary'>Detail</a>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</div>
