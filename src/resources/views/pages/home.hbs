@@ -1,22 +1,22 @@
 <div class='courses-container'>
-  <div class='container my-5'>
-    <div class='row'>
+  <div class='container my-5 p-0'>
+    <div class='row justify-content-center'>
       {{#each courses as |course|}}
-        <div class='col mb-4'>
-          <div class='card' style='width: 18rem;'>
-            <a href='/courses/{{course.slug}}'>
+        <div class='col-lg-4 col-md-6 mb-4'>
+          <div class='card h-100 shadow-sm'>
+            <a href='/courses/{{course.slug}}' class='card-img-top'>
               <img
                 src='http://img.youtube.com/vi/{{course.videoID}}/hqdefault.jpg'
-                class='card-img-top'
                 alt='{{course.name}}'
+                style='width: 100%; object-fit: cover;'
               />
             </a>
-            <div class='card-body'>
-              <a class='link-underline link-underline-opacity-0' href='/courses/{{course.slug}}'>
-                <h5 class='card-title'>{{course.name}}</h5>
+            <div class='card-body d-flex flex-column'>
+              <a href='/courses/{{course.slug}}' class='text-decoration-none'>
+                <h5 class='card-title text-center text-primary'>{{course.name}}</h5>
               </a>
-              <p class='card-text'>{{course.description}}</p>
-              <a href='/courses/{{course.slug}}' class='btn btn-primary'>Detail</a>
+              <p class='card-text mt-auto'>{{course.description}}</p>
+              <a href='/courses/{{course.slug}}' class='btn btn-primary mt-2'>Learn More</a>
             </div>
           </div>
         </div>

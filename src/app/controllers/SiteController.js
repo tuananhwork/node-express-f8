@@ -2,8 +2,8 @@ const Course = require('../models/Course');
 const { mutipleMongooseToObject } = require('../../utils/mongoose');
 
 class SiteController {
-  async index(req, res, next) {
-    await Course.find({})
+  index(req, res, next) {
+    Course.find({})
       .then((courses) => {
         res.render('pages/home', {
           pageTitle: 'Home Page',
@@ -11,10 +11,6 @@ class SiteController {
         });
       })
       .catch(next);
-
-    // res.render('pages/home', {
-    //   pageTitle: 'Home Page',
-    // });
   }
 
   search(req, res) {
